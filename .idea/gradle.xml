@@ -28,6 +28,9 @@
           <set>
             <option value="$PROJECT_DIR$/plugin" />
             <option value="$PROJECT_DIR$/test-project" />
+            <option value="$PROJECT_DIR$/test-project/src" />
+            <option value="$PROJECT_DIR$/test-project/src/project-a" />
+            <option value="$PROJECT_DIR$/test-project/src/project-b" />
           </set>
         </option>
       </GradleProjectSettings>
