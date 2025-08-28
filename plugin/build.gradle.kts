@@ -4,6 +4,8 @@ plugins {
     kotlin("plugin.serialization") version "2.0.0"
 }
 
+version = providers.gradleProperty("version").get()
+
 repositories {
     mavenCentral()
 }
