@@ -36,7 +36,10 @@ class KtChangesFacade {
 
     fun start(pluginRootDir: File) {
         val rootDir = gitService.getProjectRoot(pluginRootDir)
+
         val projectConfig = configService.getConfig(rootDir.absolutePath)
+        if (!projectConfig.enabled) return println("KtChanges is disabled, skipping...")
+
         val changeDetails = getSelectionList(rootDir, projectConfig)
 
         session {
