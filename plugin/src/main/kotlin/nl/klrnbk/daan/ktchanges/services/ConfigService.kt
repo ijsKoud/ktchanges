@@ -1,6 +1,7 @@
 package nl.klrnbk.daan.ktchanges.services
 
 import net.mamoe.yamlkt.Yaml
+import nl.klrnbk.daan.ktchanges.DIRECTORY
 import nl.klrnbk.daan.ktchanges.models.KtChangesConfig
 import java.io.File
 
@@ -11,7 +12,7 @@ class ConfigService {
 
     fun parseContents(contents: String): KtChangesConfig = yaml.decodeFromString(KtChangesConfig.serializer(), contents)
 
-    fun getConfigPath(basePath: String): String = File(basePath, ".ktchanges/config.yaml").absolutePath
+    fun getConfigPath(basePath: String): String = File(basePath, "$DIRECTORY/config.yaml").absolutePath
 
     fun getConfig(basePath: String): KtChangesConfig {
         val path = getConfigPath(basePath)

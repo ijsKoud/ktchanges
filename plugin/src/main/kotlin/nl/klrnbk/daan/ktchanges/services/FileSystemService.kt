@@ -1,9 +1,8 @@
 package nl.klrnbk.daan.ktchanges.services
 
-import org.gradle.internal.impldep.bsh.commands.dir
+import nl.klrnbk.daan.ktchanges.DIRECTORY
 import java.io.File
 import java.time.Instant
-import java.time.LocalDateTime
 import kotlin.io.path.Path
 import kotlin.io.path.absolutePathString
 import kotlin.io.path.listDirectoryEntries
@@ -25,7 +24,7 @@ class FileSystemService {
         bumps: Map<String, String>,
     ) {
         val name = "${Instant.now().epochSecond}-changeset.yaml"
-        val file = File(directory, ".ktchanges/$name")
+        val file = File(directory, "$DIRECTORY/$name")
 
         val contents = bumps.map { (path, type) -> "$path: $type" }.joinToString("\n")
         file.writeText(contents)
