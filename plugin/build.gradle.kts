@@ -1,6 +1,7 @@
 plugins {
     `java-gradle-plugin`
     kotlin("jvm") version "2.0.0"
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 repositories {
@@ -13,6 +14,7 @@ dependencies {
 
     implementation("com.varabyte.kotter:kotter-jvm:1.2.1")
     testImplementation("com.varabyte.kotterx:kotter-test-support-jvm:1.2.1")
+    implementation("net.mamoe.yamlkt:yamlkt:0.13.0")
 }
 
 gradlePlugin {
