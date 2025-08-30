@@ -4,7 +4,9 @@
     <bytecodeTargetLevel>
       <module name="ktchanges-test-project.main" target="22" />
       <module name="ktchanges-test-project.test" target="22" />
+      <module name="ktchanges.functionalTest" target="22" />
       <module name="plugin" target="23" />
+      <module name="plugin.ktchanges.functionalTest" target="22" />
       <module name="plugin.main" target="23" />
       <module name="plugin.test" target="23" />
     </bytecodeTargetLevel>
