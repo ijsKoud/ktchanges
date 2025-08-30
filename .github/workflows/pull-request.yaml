@@ -1,0 +1,6 @@
+name: pull-request
+on: [pull_request]
+
+jobs:
+  reuse-workflow:
+    uses: ijsKoud/actions/.github/workflows/generic-pull-request.yaml@main
