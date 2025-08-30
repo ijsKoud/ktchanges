@@ -1,0 +1,3 @@
+tests:
+  enabled: true
+  script: scripts/tests.sh
