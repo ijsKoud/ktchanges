@@ -1,0 +1,4 @@
+enabled: true
+baseBranch: origin/main
+sources:
+  - test-project/src
