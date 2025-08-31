@@ -1,3 +1,5 @@
+language: kotlin
+
 tests:
   enabled: true
   script: scripts/tests.sh
