@@ -1,3 +1,11 @@
+name: ktchanges
+
+language:
+  name: kotlin
+  properties:
+    version: '24'
+    distribution: 'zulu'
+
 tests:
   enabled: true
   script: scripts/tests.sh
