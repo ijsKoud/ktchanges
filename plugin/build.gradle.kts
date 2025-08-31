@@ -33,5 +33,4 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-kotlin { jvmToolchain(22) }
-java { toolchain.languageVersion.set(JavaLanguageVersion.of(22)) }
+kotlin { jvmToolchain(24) }

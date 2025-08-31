@@ -5,7 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/plugin" />
     <file type="web" url="file://$PROJECT_DIR$/test-project" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="corretto-22" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="openjdk-24" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
