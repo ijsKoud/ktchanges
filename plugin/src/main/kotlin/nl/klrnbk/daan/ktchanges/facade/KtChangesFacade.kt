@@ -63,11 +63,10 @@ class KtChangesFacade {
                 fileSystemService.writeChangesetFile(rootDir.absolutePath, bumpMap)
                 section { textLine("Changeset created!") }.run()
 
-                exitProcess(0)
+                return@session
             }
 
             section { textLine("Aborted.") }.run()
-            exitProcess(1)
         }
     }
 
