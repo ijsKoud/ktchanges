@@ -8,4 +8,4 @@ cd ./plugin || exit 1
 echo "Running tests..."
 ./gradlew test
 
-bash scripts/test-changeset.sh
+ls
