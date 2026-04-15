@@ -22,17 +22,12 @@ fi
 echo "✅ Found changeset file: $CHANGESET_FILE"
 echo ""
 echo "📋 Changeset contents:"
-echo "---"
 cat "$CHANGESET_FILE"
-echo "---"
 echo ""
 
 # Parse and apply version bumps
 echo "🔄 Simulating version bump process..."
 echo ""
-
-TEMP_CHANGES="/tmp/version_changes.txt"
-> "$TEMP_CHANGES"
 
 while IFS=: read -r project bump_type; do
     project=$(echo "$project" | xargs)  # trim whitespace
@@ -79,15 +74,8 @@ while IFS=: read -r project bump_type; do
     echo "   Bump type: $bump_type"
     echo "   New version: $NEW_VERSION"
     echo ""
-
-    echo "$project: $CURRENT_VERSION -> $NEW_VERSION ($bump_type)" >> "$TEMP_CHANGES"
 done < "$CHANGESET_FILE"
 
 echo "==================================="
 echo "✅ Version bump simulation complete!"
-echo ""
-echo "Changes that would be applied:"
-echo "---"
-cat "$TEMP_CHANGES" || echo "No changes to apply"
-echo "---"
 
