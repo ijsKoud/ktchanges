@@ -26,7 +26,9 @@ class FileSystemService {
         val name = "${Instant.now().epochSecond}-changeset.yaml"
         val file = File(directory, "$DIRECTORY/$name")
 
-        val contents = bumps.map { (path, type) -> "$path: $type" }.joinToString("\n")
+        var contents = bumps.map { (path, type) -> "$path: $type" }.joinToString("\n")
+        contents += "\n"
+
         file.writeText(contents)
     }
 }
