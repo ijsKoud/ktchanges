@@ -1,32 +1,18 @@
 package nl.klrnbk.daan.ktchanges.facade
 
-import com.varabyte.kotter.foundation.collections.liveListOf
-import com.varabyte.kotter.foundation.input.Keys
-import com.varabyte.kotter.foundation.input.onKeyPressed
-import com.varabyte.kotter.foundation.liveVarOf
-import com.varabyte.kotter.foundation.runUntilSignal
 import com.varabyte.kotter.foundation.session
-import com.varabyte.kotter.foundation.text.black
-import com.varabyte.kotter.foundation.text.bold
-import com.varabyte.kotter.foundation.text.clearAll
-import com.varabyte.kotter.foundation.text.rgb
-import com.varabyte.kotter.foundation.text.text
 import com.varabyte.kotter.foundation.text.textLine
-import com.varabyte.kotter.foundation.text.underline
-import nl.klrnbk.daan.ktchanges.GRAY_RGB
 import nl.klrnbk.daan.ktchanges.confirmation
 import nl.klrnbk.daan.ktchanges.getListSelection
 import nl.klrnbk.daan.ktchanges.models.KtChangesConfig
 import nl.klrnbk.daan.ktchanges.models.ProjectSelectionDetails
-import nl.klrnbk.daan.ktchanges.models.ProjectSelectionDetailsBaseEntry
 import nl.klrnbk.daan.ktchanges.models.ProjectSelectionDetailsEntry
-import nl.klrnbk.daan.ktchanges.models.ProjectSelectionDetailsHeader
 import nl.klrnbk.daan.ktchanges.services.ChangesService
 import nl.klrnbk.daan.ktchanges.services.ConfigService
 import nl.klrnbk.daan.ktchanges.services.FileSystemService
 import nl.klrnbk.daan.ktchanges.services.GitService
-import org.gradle.api.Project
 import java.io.File
+import kotlin.system.exitProcess
 
 class KtChangesFacade {
     private val gitService = GitService()
@@ -77,10 +63,11 @@ class KtChangesFacade {
                 fileSystemService.writeChangesetFile(rootDir.absolutePath, bumpMap)
                 section { textLine("Changeset created!") }.run()
 
-                return@session
+                exitProcess(0)
             }
 
             section { textLine("Aborted.") }.run()
+            exitProcess(1)
         }
     }
 
